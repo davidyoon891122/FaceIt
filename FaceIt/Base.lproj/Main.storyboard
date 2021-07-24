@@ -16,20 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hrQ-ab-0d6" customClass="FaceView" customModule="FaceIt" customModuleProvider="target">
+                            <view contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrQ-ab-0d6" customClass="FaceView" customModule="FaceIt" customModuleProvider="target">
                                 <rect key="frame" x="16" y="44" width="358" height="766"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="eyesOpen" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="mouthCurvature">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" systemColor="systemGreenColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="eyeBrowTilt">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="hrQ-ab-0d6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CyV-xG-Wxy"/>
-                            <constraint firstItem="hrQ-ab-0d6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="I0j-M7-EoD"/>
-                            <constraint firstItem="hrQ-ab-0d6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uiP-a3-tao"/>
-                            <constraint firstItem="hrQ-ab-0d6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="z4F-aI-7DT"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="hrQ-ab-0d6" id="Asl-pg-y8a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,6 +52,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
