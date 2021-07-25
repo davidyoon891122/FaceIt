@@ -10,7 +10,14 @@ import UIKit
 class FaceViewController: UIViewController {
     var expression = FacialExpression(eyes: .Open, eyeBrows: .Furrowed, mouth: .Neutral){ didSet{ updateUI() } }
     
-    @IBOutlet var faceView: FaceView! { didSet { updateUI() } }
+    @IBOutlet var faceView: FaceView! {
+        didSet {
+            faceView.addGestureRecognizer(UIPinchGestureRecognizer(target: faceView, action: #selector(FaceView.changeScale(recognizer:))
+            ))
+            updateUI()
+            
+        }
+    }
     
     private let mouthCurvatures = [
         FacialExpression.Mouth.Frown:-1.0,

@@ -26,6 +26,19 @@ class FaceView: UIView {
     var lineWidth: CGFloat = 5.0{ didSet { setNeedsDisplay() }} 
     
     
+    @objc func changeScale(recognizer: UIPinchGestureRecognizer) {
+        switch recognizer.state {
+        case .changed, .ended:
+            scale *= recognizer.scale
+            // scale 축척을 막기 위함
+            recognizer.scale = 1.0
+        default:
+            break
+        }
+    }
+    
+    
+    
     private var skullRadius: CGFloat {
         return min(bounds.size.width, bounds.size.height) / 2 * scale
     }
