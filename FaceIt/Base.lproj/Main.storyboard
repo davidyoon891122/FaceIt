@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JTg-nt-CFd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yBt-WK-pWI">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Face View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="FaceViewController" customModule="FaceIt" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hrQ-ab-0d6" customClass="FaceView" customModule="FaceIt" customModuleProvider="target">
+                            <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hrQ-ab-0d6" customClass="FaceView" customModule="FaceIt" customModuleProvider="target">
                                 <rect key="frame" x="16" y="44" width="358" height="766"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <userDefinedRuntimeAttributes>
@@ -43,7 +42,14 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hrQ-ab-0d6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4HZ-cG-i3b"/>
+                            <constraint firstItem="hrQ-ab-0d6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="X2H-9q-Dix"/>
+                            <constraint firstItem="hrQ-ab-0d6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="gGv-gC-UAE"/>
+                            <constraint firstItem="hrQ-ab-0d6" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="gKx-Kq-rbn"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="OL2-A4-qw3"/>
                     <connections>
                         <outlet property="faceView" destination="hrQ-ab-0d6" id="Asl-pg-y8a"/>
                     </connections>
@@ -55,24 +61,85 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="578" y="160"/>
+            <point key="canvasLocation" x="-1580" y="1003"/>
         </scene>
-        <!--Emotions View Controller-->
+        <!--Split View Controller-->
+        <scene sceneID="2dh-fl-oBT">
+            <objects>
+                <splitViewController allowDoubleColumnStyle="YES" id="yBt-WK-pWI" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="JTg-nt-CFd" kind="relationship" relationship="masterViewController" id="FjS-u3-Mei"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="detailViewController" id="EAh-tW-aHU"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kNv-aT-isj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2832" y="401"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="FEz-ug-24D">
             <objects>
                 <viewController id="JTg-nt-CFd" customClass="EmotionsViewController" customModule="FaceIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f4b-8t-BZf">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Q9t-iT-8pY">
+                                <rect key="frame" x="84" y="293" width="222" height="258"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qah-ya-rH8">
+                                        <rect key="frame" x="0.0" y="0.0" width="222" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Angry"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="angry" id="jV5-he-MoO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UXk-sC-dXd">
+                                        <rect key="frame" x="0.0" y="66" width="222" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Happy"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="happy" id="E2s-9R-6Gx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbN-26-qJz">
+                                        <rect key="frame" x="0.0" y="132" width="222" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Worried"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="worried" id="B8v-ye-k5N"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-jR-vfm">
+                                        <rect key="frame" x="0.0" y="198" width="222" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="Mischievious"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" identifier="mischievious" id="Rvn-QO-ZPp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4w4-Nj-TsE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Q9t-iT-8pY" firstAttribute="leading" secondItem="4w4-Nj-TsE" secondAttribute="leading" constant="84" id="Nvm-KY-o1G"/>
+                            <constraint firstItem="Q9t-iT-8pY" firstAttribute="centerY" secondItem="f4b-8t-BZf" secondAttribute="centerY" id="eUj-Fp-Qsv"/>
+                            <constraint firstItem="Q9t-iT-8pY" firstAttribute="centerX" secondItem="f4b-8t-BZf" secondAttribute="centerX" id="hfB-4V-vfi"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="FaB-zH-ez8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pmE-kC-ppC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-369" y="160"/>
+            <point key="canvasLocation" x="-1580" y="142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Rvn-QO-ZPp"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
