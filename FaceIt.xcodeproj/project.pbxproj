@@ -16,6 +16,7 @@
 		AD1D7F9026A8616000D058E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD1D7F8E26A8616000D058E2 /* LaunchScreen.storyboard */; };
 		AD1D7F9826A8639600D058E2 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D7F9726A8639600D058E2 /* FaceView.swift */; };
 		AD29DEAC26AC417E00CFEF86 /* FacialExpression.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD29DEAB26AC417E00CFEF86 /* FacialExpression.swift */; };
+		AD461DB126C158690071A026 /* EmotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD461DB026C158690071A026 /* EmotionsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		AD1D7F9126A8616000D058E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD1D7F9726A8639600D058E2 /* FaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
 		AD29DEAB26AC417E00CFEF86 /* FacialExpression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialExpression.swift; sourceTree = "<group>"; };
+		AD461DB026C158690071A026 /* EmotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				AD1D7F8926A8615F00D058E2 /* FaceIt.xcdatamodeld */,
 				AD1D7F9726A8639600D058E2 /* FaceView.swift */,
 				AD29DEAB26AC417E00CFEF86 /* FacialExpression.swift */,
+				AD461DB026C158690071A026 /* EmotionsViewController.swift */,
 			);
 			path = FaceIt;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 				AD1D7F8526A8615F00D058E2 /* FaceViewController.swift in Sources */,
 				AD1D7F8126A8615F00D058E2 /* AppDelegate.swift in Sources */,
 				AD1D7F8326A8615F00D058E2 /* SceneDelegate.swift in Sources */,
+				AD461DB126C158690071A026 /* EmotionsViewController.swift in Sources */,
 				AD1D7F8B26A8615F00D058E2 /* FaceIt.xcdatamodeld in Sources */,
 				AD1D7F9826A8639600D058E2 /* FaceView.swift in Sources */,
 				AD29DEAC26AC417E00CFEF86 /* FacialExpression.swift in Sources */,
